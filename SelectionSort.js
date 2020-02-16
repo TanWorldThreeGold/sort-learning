@@ -63,4 +63,5 @@ function main() {
     // console.log(answer);
 }
 
-main();
+module.exports = selectionSort;
+// main();

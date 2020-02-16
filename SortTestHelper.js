@@ -12,6 +12,19 @@ class SortTestHelper {
             return []
         }
     }
+    // 创建近似有序数组，只改变swapTimes个值的位置
+    generateNearlyOrderedArray(n, swapTimes) {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = i;
+        }
+        for (let i = 0; i < swapTimes; i++) {
+            let posx = Math.floor(Math.random() * n);
+            let posy = Math.floor(Math.random() * n);
+            [arr[posx], arr[posy]] = [arr[posy], arr[posx]];
+        }
+        return arr;
+    }
     // 判断排序算法是否正确
     isSorted(arr, n) {
         for (let i = 0; i < n - 1; i++) {
@@ -31,6 +44,9 @@ class SortTestHelper {
         } else {
             console.log('算法排序出错啦!');
         }
+    }
+    copyArray(arr) {
+        return Array.from(arr)
     }
 }
 module.exports = SortTestHelper;
