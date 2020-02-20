@@ -42,7 +42,7 @@ class SortTestHelper {
         if (this.isSorted(arr, n)) {
             console.log(`${sortName}：${(endTime - startTime) / 1000}s`);
         } else {
-            console.log('算法排序出错啦!');
+            console.log(`${sortName} 算法排序出错啦!`);
         }
     }
     copyArray(arr) {

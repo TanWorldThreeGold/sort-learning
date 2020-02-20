@@ -14,6 +14,20 @@ function insertionSort (arr, num) {
     }
 }
 
+// 优化归并排序增加的方法
+// 对arr[l...r]范围内的数组进行插入排序
+function insertInMerge(arr, l, r) {
+    for (let i = l + 1; i <= r; i++) {
+        let e = arr[i];
+        let j;
+        for (j = i; j > l && arr[j - 1] > e; j--) {
+            arr[j] = arr[j - 1];
+        }
+        arr[j] =e;
+    }
+    return;
+}
+
 function main() {
     let n = 10000;
     // 近似有序数组比普通数组排序，插入排序明显快很多
@@ -25,4 +39,6 @@ function main() {
     testHelper.testSort("Insertion Sort", insertionSort, arr, n);
     testHelper.testSort("Selection Sort", selectionSort, arr2, n);
 }
-main();
+
+module.exports = insertionSort;
+// main();
