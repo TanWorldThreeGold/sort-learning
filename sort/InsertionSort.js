@@ -25,20 +25,20 @@ function insertInMerge(arr, l, r) {
         }
         arr[j] =e;
     }
-    return;
 }
 
 function main() {
-    let n = 10000;
+    let n = 100000;
     // 近似有序数组比普通数组排序，插入排序明显快很多
     let testHelper = new SortTestHelper()
-    // let arr = testHelper.generateRandomArray(n, 0, n);
-    let arr = testHelper.generateNearlyOrderedArray(n, 100);
+    let arr = testHelper.generateRandomArray(n, 0, n);
+    // let arr = testHelper.generateNearlyOrderedArray(n, 100);
     let arr2 = testHelper.copyArray(arr, n);
 
     testHelper.testSort("Insertion Sort", insertionSort, arr, n);
     testHelper.testSort("Selection Sort", selectionSort, arr2, n);
 }
 
-module.exports = insertionSort;
+module.exports.insertionSort = insertionSort;
+module.exports.insertInMerge = insertInMerge;
 // main();
