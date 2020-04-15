@@ -12,6 +12,7 @@ function mergeSortBU(arr, num) {
     }
 }
 
+// 自顶向下的归并排序
 function mergeSort(arr, num) {
     _mergeSort(arr, 0, num - 1);
 }
@@ -57,7 +58,8 @@ function _merge(arr, l, mid, r) {
     }
 }
 function main() {
-    let n = 10000;
+    let n = 10000
+    ;
     let testHelper = new SortTestHelper()
     let arr = testHelper.generateRandomArray(n, 0, n);
     // let arr = testHelper.generateNearlyOrderedArray(n, 100);
